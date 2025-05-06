@@ -3,14 +3,15 @@ from astrbot.api.star import Context, Star, register
 from astrbot.api import logger, scheduler
 import astrbot.api.message_components as Comp
 
+import os, json, random, time, hashlib, aiohttp
+from io import BytesIO
+from PIL import Image, ImageDraw, ImageFont
+
 @register("捕鱼大亨", "Koikokokokoro", "Astrbot捕鱼插件", "0.0.3")
 class Fishing(Star):
     def __init__(self, context: Context):
         super().__init__(context)
         # 初始化文件路径
-        import os, json, random, time, hashlib, aiohttp
-        from io import BytesIO
-        from PIL import Image, ImageDraw, ImageFont
         self.DATA_DIR = os.path.join(os.getcwd(), "data", "plugins", "astrbot_plugin_fishing")
         os.makedirs(self.DATA_DIR, exist_ok=True)
         self.FISH_FILE = os.path.join(self.DATA_DIR, "fish_data.json")
