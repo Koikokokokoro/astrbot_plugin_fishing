@@ -17,7 +17,7 @@ class Fishing(Star):
         super().__init__(context)
         # 数据目录与静态文件路径
         base = os.getcwd()
-        self.data_dir = os.path.join(base, "data", "plugins", "fishing_tycoon")
+        self.data_dir = os.path.join(base, "data", "plugins", "astrbot_plugin_fishing")
         os.makedirs(self.data_dir, exist_ok=True)
         self.fish_file = os.path.join(self.data_dir, "fish_data.json")
         self.item_file = os.path.join(self.data_dir, "fish_item.json")
